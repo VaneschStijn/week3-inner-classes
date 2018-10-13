@@ -1,4 +1,4 @@
-package be.pxl.week3.opdracht1;
+package be.pxl.innerclasses.opdracht1;
 
 public class GearboxUsage {
 	public static void main(String[] args) {

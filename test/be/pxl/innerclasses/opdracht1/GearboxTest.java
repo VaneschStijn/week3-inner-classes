@@ -1,11 +1,11 @@
-package be.pxl.week3.opdracht1;
+package be.pxl.innerclasses.opdracht1;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class GearboxTest{
-	
+
 	@Test
 	public void testGearboxConstructorAndWheelSpeed() {
 		Gearbox mcLaren = new Gearbox(3);
@@ -23,7 +23,7 @@ public class GearboxTest{
 		mcLaren.operateClutch(false);
 		assertEquals(15900.0, mcLaren.wheelSpeed(1000), 0.01);
 	}
-	
+
 	@Test
 	public void changeGearNotAllowedWhenClutchIsInFalse() {
 		Gearbox mcLaren = new Gearbox(3);
@@ -31,11 +31,11 @@ public class GearboxTest{
 		mcLaren.operateClutch(true);
 		mcLaren.changeGear(1);
 		mcLaren.operateClutch(false);
-		
+
 		mcLaren.changeGear(2);
 		assertEquals(0.0, mcLaren.wheelSpeed(1000), 0.01);
 	}
-	
+
 	@Test
 	public void changeGearNotAllowedWhenNewGearNegative() {
 		Gearbox mcLaren = new Gearbox(3);
@@ -43,11 +43,11 @@ public class GearboxTest{
 		mcLaren.operateClutch(true);
 		mcLaren.changeGear(1);
 		mcLaren.operateClutch(false);
-		
+
 		mcLaren.changeGear(-1);
 		assertEquals(0.0, mcLaren.wheelSpeed(1000), 0.01);
 	}
-	
+
 	@Test
 	public void changeGearNotAllowedWhenNewGearGreaterThanMaxGears() {
 		Gearbox mcLaren = new Gearbox(3);
@@ -55,10 +55,8 @@ public class GearboxTest{
 		mcLaren.operateClutch(true);
 		mcLaren.changeGear(1);
 
-		
+
 		mcLaren.changeGear(4);
 		assertEquals(0.0, mcLaren.wheelSpeed(1000), 0.01);
 	}
-	
-	
 }
